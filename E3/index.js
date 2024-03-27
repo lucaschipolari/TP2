@@ -5,14 +5,17 @@ guión -.
 Nota: usar confirm() https://www.w3schools.com/jsref/met_win_confirm.asp
 
 */
-let arreglo =[];
-do{
-    let cadena = prompt('Ingrese una cadena de texto');
-    if(confirm()){
-       alert(); 
-        break;
+let cadenas = [];
+do{ 
+    let cadena = prompt('Introduce una cadena de texto:');
+    if(cadena !== null){
+        if(cadena.trim().length>0){
+            cadenas.push(cadena);
+        }
     }else{
-        arreglo.push(cadena);
+        if(confirm('Desea terminar?')){
+            alert(cadenas.join(' - '));
+            break;
+        }
     }
-
-}while(true);
+    }while(true);
