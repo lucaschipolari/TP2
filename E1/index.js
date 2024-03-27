@@ -10,7 +10,8 @@ indicarlo en un mensaje.
 do{
     let edad = prompt('Ingrese la edad');
     if(edad !== null || edad.trim.length > 0){
-        if(Number(edad)){
+        edad = Number(edad);
+        if(Number.isInteger(edad)){
             if(Number(edad) >= 18){
                 alert('Puede conducir');
             }else{
