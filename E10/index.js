@@ -17,12 +17,12 @@ do{
                 fila= Number(fila);
                 if(Number.isInteger(columna) && Number.isInteger(fila)){
                     if(columna >= 1 && columna <= 50 && fila >= 1 && fila <= 50){
-                        let x = 1;
+                        let x = fila*columna;
                         document.write('<table><tbody>');
                         for(let i = 1; i <= fila; i++){
                             for(let j = 1; j <= columna; j++){
                                     document.write(`<tr> ${x<10? '0'+x : x}</tr>`);
-                                    x++;
+                                    x--;
                             }
                             document.write("<br>");
                         }
