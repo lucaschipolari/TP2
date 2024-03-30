@@ -11,14 +11,24 @@ do{
     cadena= prompt('Ingrese una cadena de texto');
     let arreglo='';
     if(cadena!== null){
-        for(let i=1; i<cadena.length; i++){
-           if(i===cadena.length-1){
-            arreglo += cadena.charAt(i);
-           }else{
-               arreglo += cadena.charAt(i)+'-';
-           }
+        if(cadena.trim().length>0){
+            if(cadena !== undefined){
+                for(let i=1; i<cadena.length; i++){
+                    if(i===cadena.length-1){
+                     arreglo += cadena.charAt(i);
+                    }else{
+                        arreglo += cadena.charAt(i)+'-';
+                    }
+                 }
+                 alert(arreglo);
+            }else{
+                alert('Introduce una cadena de texto');
+            }
+            
+        }else{
+            alert('Introduce una cadena de texto');
         }
-        alert(arreglo);
+        
     }else{
         if(confirm('Desea terminar?')){
             break;
