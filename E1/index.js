@@ -7,19 +7,24 @@ indicarlo en un mensaje.
 
 
 
-do{
+do {
     let edad = prompt('Ingrese la edad');
-    if(edad !== null || edad.trim.length > 0){
-        edad = Number(edad);
-        if(Number.isInteger(edad)){
-            if(Number(edad) >= 18){
-                alert('Puede conducir');
-            }else{
-                alert('No puede conducir');
+    if (edad !== null && edad.trim().length > 0) {
+        if (!isNaN(edad)) {
+            edad = Number(edad);
+            if (Number.isInteger(edad) && edad >= 0) {
+                if (edad >= 18) {
+                    alert('Puede conducir');
+                } else {
+                    alert('No puede conducir');
+                }
+            } else {
+                alert('El ingreso no es un número entero válido');
             }
-        }else{
-            alert('El ingreso no es un numero valido');
+        } else {
+            alert('El ingreso no es un número válido');
         }
+    } else {
+        break;
     }
-
-}while(true);
+} while (true);
