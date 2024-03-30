@@ -7,26 +7,37 @@
 55555
 666666
 …….*/
-
+let n;
 do{
-    let n = prompt("Ingrese un número entero");
-    if(n !== null){
-    if (isNaN(n)) {
-        alert("Ingrese un número entero");
-    }else if (n < 1 || n > 30) {
-        alert("Ingrese un número entre 1 y 30");
-    }else{
-        for (let i = 1; i <= n; i++) {
-            for (let j =1; j <= i; j++) {
-                console.log(i);
+    n = prompt('Ingrese un numero');
+if(n!==null){
+    if(n !== undefined){
+        n = n.trim();
+        if(n.length > 0 && !isNaN(n)){
+            n = Number(n);
+            if(Number.isInteger(n)){
+                if(n >= 1 && n <= 30){
+                    for (let i = 1; i <= n; i++) {
+                        for (let j =1; j <= i; j++) {
+                            console.log(i);
+                        }
+                    }
+                    break;
+                }else{
+                    alert('Introduce un perteneciente al rango 1 a 50');
+                }
+            }else{
+                alert('Introduce un numero valido');
             }
-        }
-        break;
+        }else{
+            alert('Introduce un numero valido');
         }
     }else{
-        break;
+        alert('Introduce un numero valido');
     }
     
-
+}else{
+    break;
+}
 }while(true);
 
