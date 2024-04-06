@@ -9,22 +9,21 @@ indicarlo en un mensaje.
 
 do {
     let edad = prompt('Ingrese la edad');
-    if (edad !== null && edad.trim().length > 0) {
-        if (!isNaN(edad)) {
-            edad = Number(edad);
-            if (Number.isInteger(edad) && edad >= 0) {
-                if (edad >= 18) {
-                    alert('Puede conducir');
-                } else {
-                    alert('No puede conducir');
-                }
-            } else {
-                alert('El ingreso no es un número entero válido');
-            }
-        } else {
-            alert('El ingreso no es un número válido');
-        }
-    } else {
+    if (!(edad !== null && edad.trim().length > 0)) {
+       break;
+    }
+    if (isNaN(edad) && parseInt(edad)) {
+        alert('El ingreso no es un número válido');
         break;
     }
+    edad = Number(edad);
+    if (edad <= 0) {
+            alert('El ingreso no es un número entero válido');
+            break;
+    }
+    if (edad <= 18) {
+        alert('No puede conducir');
+        break;
+    }
+    alert('Puede conducir');
 } while (true);
